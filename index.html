@@ -156,6 +156,27 @@
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
+        <!-- Your audio here -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <p><strong>Mixed</strong></p>
+            <audio controls style="width: 200px;">
+              <source src="static/examples/19/19_mix.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div style="text-align: center;">
+            <p><strong>GT Source 1</strong></p>
+            <audio controls style="width: 300px;">
+              <source src="static/examples/19/19_spk1.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div style="text-align: center;">
+            <p><strong>Est Source 1</strong></p>
+            <audio controls style="width: 300px;">
+              <source src="static/examples/19/19_spk1_p.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
       </div>
       <div class="item">
         <!-- Your image here -->
@@ -296,7 +317,7 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h2 class="title is-2">Qualitative Comparisons</h2>
+      <h2 class="title is-2">Comparison with SOTA model on various datasets</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <!-- Your image here -->
