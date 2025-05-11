@@ -4,13 +4,13 @@ body {
 
 
 .footer .icon-link {
-    font-size: 25px;
+    font-size: 20px;
     color: #000;
 }
 
 .link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .dnerf {
@@ -20,7 +20,7 @@ body {
 
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .teaser {
@@ -115,9 +115,9 @@ body {
 }
 
 .results-carousel .item {
-  margin: 5px;
+  margin: 2px;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
   font-size: 0;
 }
 
