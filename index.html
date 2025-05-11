@@ -150,26 +150,29 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-      <div class="item" style="text-align: center;">
-        <!-- 이미지 -->
-        <img src="static/examples/19/plot.png" alt="MY ALT TEXT" width="960"/>
-        <!-- 오디오 컨트롤 -->
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 1rem;">
-          <div style="text-align: center;">
-            <p style="color: black;"><strong>Mixed</strong></p>
-            <audio controls style="width: 200px;">
+      <div class="item" style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-top: 2rem;">
+        <!-- 왼쪽: 이미지 -->
+        <div style="flex: 1; text-align: left;">
+          <img src="static/examples/19/plot.png" alt="MY ALT TEXT" width="480"/>
+        </div>
+      
+        <!-- 오른쪽: 오디오 블록 -->
+        <div style="flex: 1; text-align: left;">
+          <div style="margin-bottom: 1rem;">
+            <p style="color: black; margin-bottom: 0.2rem;"><strong>Mixed</strong></p>
+            <audio controls style="width: 100%;">
               <source src="static/examples/19/19_mix.wav" type="audio/wav">
             </audio>
           </div>
-          <div style="text-align: center;">
-            <p style="color: black;"><strong>GT Source 1</strong></p>
-            <audio controls style="width: 200px;">
+          <div style="margin-bottom: 1rem;">
+            <p style="color: black; margin-bottom: 0.2rem;"><strong>GT Source 1</strong></p>
+            <audio controls style="width: 100%;">
               <source src="static/examples/19/19_spk1.wav" type="audio/wav">
             </audio>
           </div>
-          <div style="text-align: center;">
-            <p style="color: black;"><strong>Est Source 1</strong></p>
-            <audio controls style="width: 200px;">
+          <div>
+            <p style="color: black; margin-bottom: 0.2rem;"><strong>Est Source 1</strong></p>
+            <audio controls style="width: 100%;">
               <source src="static/examples/19/19_spk1_p.wav" type="audio/wav">
             </audio>
           </div>
@@ -178,7 +181,7 @@
         
       <div class="item" style="text-align: center;">
         <!-- Your image here -->
-        <img src="static/examples/19/plot.png" alt="MY ALT TEXT" width="960"/>
+        <img src="static/examples/17/plot.png" alt="MY ALT TEXT" width="960"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
