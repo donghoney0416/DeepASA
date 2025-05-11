@@ -152,42 +152,42 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/19/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/19/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/15/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/15/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 5)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/12/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/12/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/10/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/10/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 3)
         </h2>
       </div>
      <div class="item">
         <!-- Your image here -->
-        <img src="static/examples/3/plot.png" alt="MY ALT TEXT"/>
+        <img src="static/examples/3/plot.png" alt="MY ALT TEXT" width="640"/>
         <h2 class="subtitle has-text-centered">
           ASA result of our DeepASA on the ASA2 dataset. (number of sources: 2)
         </h2>
@@ -206,7 +206,7 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified" style="font-size: 1.2rem" >
           <p>
-            We propose <b>DeepASA/b>, a <b>one-for-all model for auditory scene analysis</b> that performs multichannel-to-multichannel (M2M) source separation, dereverberation, sound event detection (SED), audio classification, and direction-of-arrival (DoA) estimation within a unified framework. DeepASA is designed for complex auditory scenes where multiple, often similar, sound sources overlap in time and move dynamically in space. To achieve robust and consistent inference across tasks, we introduce an <font color="#e0754f"><b>object-oriented processing (OOP)</b></font> strategy. This approach encapsulates diverse auditory features into object-centric representations and refines them through a <font color="#497c27"><b>chain-of-inference (CoI)</b></font> mechanism. The pipeline comprises a dynamic temporal kernel-based feature extractor, a transformer-based aggregator, and an object separator that yields per-object features. These features feed into multiple task-specific decoders. Our object-centric formulation naturally resolves the parameter association ambiguity inherent in traditional track-wise processing. However, early-stage object separation can lead to failure in downstream ASA tasks. To address this, we implement temporal coherence matching (TCM) within the chain-of-inference, enabling multi-task fusion and iterative refinement of object features using estimated audio parameters. We evaluate DeepASA on representative spatial audio benchmark datasets, including ASA, MC-FUSS, and STARSS23. Experimental results show that our model achieves state-of-the-art performance across all evaluated tasks, demonstrating its effectiveness in both source separation and auditory parameter estimation under diverse spatial auditory scenes.
+            We propose <b>DeepASA</b>, a <b>one-for-all model for auditory scene analysis</b> that performs multichannel-to-multichannel (M2M) source separation, dereverberation, sound event detection (SED), audio classification, and direction-of-arrival (DoA) estimation within a unified framework. DeepASA is designed for complex auditory scenes where multiple, often similar, sound sources overlap in time and move dynamically in space. To achieve robust and consistent inference across tasks, we introduce an <font color="#e0754f"><b>object-oriented processing (OOP)</b></font> strategy. This approach encapsulates diverse auditory features into object-centric representations and refines them through a <font color="#497c27"><b>chain-of-inference (CoI)</b></font> mechanism. The pipeline comprises a dynamic temporal kernel-based feature extractor, a transformer-based aggregator, and an object separator that yields per-object features. These features feed into multiple task-specific decoders. Our object-centric formulation naturally resolves the parameter association ambiguity inherent in traditional track-wise processing. However, early-stage object separation can lead to failure in downstream ASA tasks. To address this, we implement temporal coherence matching (TCM) within the chain-of-inference, enabling multi-task fusion and iterative refinement of object features using estimated audio parameters. We evaluate DeepASA on representative spatial audio benchmark datasets, including ASA, MC-FUSS, and STARSS23. Experimental results show that our model achieves state-of-the-art performance across all evaluated tasks, demonstrating its effectiveness in both source separation and auditory parameter estimation under diverse spatial auditory scenes.
           </p>
         </div>
       </div>
@@ -267,7 +267,7 @@
         <h2 class="title is-2">Chain-of-Inference</h2>
       </div>
       <br>
-      <figure class="image" style="margin: 0 auto; max-width: 640px;">
+      <figure class="image" style="margin: 0 auto; max-width: 960px;">
         <img src="static/images/CoI.png" alt="Result Image" style="width: 100%; height: auto;">
       </figure>
       <h3 class="subtitle is-5 mt-4">
@@ -300,15 +300,15 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <!-- Your image here -->
-          <img src="static/images/asa2_sota.PNG" alt="MY ALT TEXT"/>
+          <img src="static/images/asa2_sota.PNG" alt="MY ALT TEXT" width="640"/>
         </div>
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/mc_fuss_sota.PNG" alt="MY ALT TEXT"/>
+        <img src="static/images/mc_fuss_sota.PNG" alt="MY ALT TEXT" width="640"/>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/starss23_sota.PNG" alt="MY ALT TEXT"/>
+        <img src="static/images/starss23_sota.PNG" alt="MY ALT TEXT" width="640"/>
       </div>
   </div>
 </div>
