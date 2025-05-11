@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>ITA-MDT</title>
+  <title>DeepASA</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -57,7 +57,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">DeepASA: An Object-Oriented One-for-All Network <br> for Auditory Scene Analysis</h1>
+            <h1 class="title is-1 publication-title">DeepASA: An Object-Oriented One-for-All Network for Auditory Scene Analysis</h1>
             <div class="is-size-4 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -125,17 +125,25 @@
   </div>
 </section>
 
-<section>
-    <h2 class="subtitle has-text-centered">
-        Real-World Demo Video
-    </h2>
-    <div>
-        <video controls width="640">
+
+<!-- Demo-video -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-quarter">
+        <h2 class="title is-2">Real-world Demo Video</h2>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <video controls width="1080">
             <source src="static/videos/demo_video_accepted.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please download the video <a href="path-to-demo-video-1.mp4">here</a>.
-        </video>
+            Your browser does not support the video tag. Please download the video
+            <a href="static/videos/demo_video_accepted.mp4">here</a>.
+          </video>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+<!-- End demo video -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -146,42 +154,42 @@
         <!-- Your image here -->
         <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/examples/15/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 5)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/examples/12/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 4)
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/examples/10/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 3)
         </h2>
       </div>
      <div class="item">
         <!-- Your image here -->
         <img src="static/examples/3/plot.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          ASA result of our DeepASA on the ASA2 dataset.
+          ASA result of our DeepASA on the ASA2 dataset. (number of sources: 2)
         </h2>
       </div>
   </div>
@@ -218,7 +226,7 @@
         <h2 class="title is-2">Overview</h2>
       </div>
       <br>
-      <figure class="image" style="margin: 0 auto; max-width: 1280px;">
+      <figure class="image" style="margin: 0 auto; max-width: 960px;">
         <img src="static/images/DeepASA.png" alt="Result Image" style="width: 100%; height: auto;">
       </figure>
 
@@ -237,7 +245,7 @@
     <div class="container">
       <!-- Centered Title -->
       <div class="has-text-centered">
-        <h2 class="title is-2">Chain-of-Inference</h2>
+        <h2 class="title is-2">Object-oriented processing</h2>
       </div>
       <br>
       <figure class="image" style="margin: 0 auto; max-width: 1280px;">
@@ -259,7 +267,7 @@
         <h2 class="title is-2">Chain-of-Inference</h2>
       </div>
       <br>
-      <figure class="image" style="margin: 0 auto; max-width: 1280px;">
+      <figure class="image" style="margin: 0 auto; max-width: 640px;">
         <img src="static/images/CoI.png" alt="Result Image" style="width: 100%; height: auto;">
       </figure>
       <h3 class="subtitle is-5 mt-4">
@@ -293,23 +301,14 @@
         <div class="item">
           <!-- Your image here -->
           <img src="static/images/asa2_sota.PNG" alt="MY ALT TEXT"/>
-          <h2 class="subtitle has-text-centered">
-            Comparison with state-of-the-art models on ASA2 dataset.
-          </h2>
         </div>
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/mc_fuss_sota.PNG" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Comparison with state-of-the-art models on MC-FUSS dataset.
-        </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/starss23_sota.PNG" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Comparison with state-of-the-art models on STARSS23 dataset.
-        </h2>
       </div>
   </div>
 </div>
