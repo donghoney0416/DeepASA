@@ -1,188 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeFTAN-Series</title>
-    <style>
-        /* 전체 페이지 배경 */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333;
-            text-align: center;
-        }
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-        /* 그라데이션 애니메이션 */
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
 
-        /* 헤더 스타일 */
-        header {
-            padding: 20px;
-            background: linear-gradient(120deg, #4a90e2, #9013fe);
-            background-size: 200% 200%;
-            animation: gradient 6s ease infinite;
-            color: #fff;
-            font-size: 20px; /* 제목 글꼴 크기를 약간 줄임 */
-            font-weight: bold;
-            border-bottom: 1px solid #fff;
-            margin-bottom: 20px;
-        }
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        /* 본문 섹션 스타일 */
-        section {
-            margin: 0 auto;
-            max-width: 900px;
-            padding: 20px;
-            background-color: #ffffff;
-            color: #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
 
-        .left-aligned {
-            text-align: left;
-        }
+  <title>ITA-MDT</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
 
-        /* 콘텐츠 카드 스타일 */
-        .content-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
-        .content-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-right: 15px;
-        }
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 
-        .content-text {
-            flex: 1;
-        }
-
-        .content-text a {
-            font-weight: bold;
-            font-size: 18px; /* 제목 글꼴 크기 줄임 */
-            color: #4a90e2;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .content-text a:hover {
-            color: #9013fe;
-        }
-
-        .content-details {
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* 푸터 스타일 */
-        footer {
-            padding: 15px;
-            background: linear-gradient(120deg, #4a90e2, #9013fe);
-            background-size: 200% 200%;
-            animation: gradient 6s ease infinite;
-            color: #fff;
-            font-size: 14px;
-            border-top: 1px solid #fff;
-            margin-top: 20px;
-        }
-    </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
-    <header>
-        <h1>DeFTAN: Dense Frequency-Time Attentive Network for <br>Multichannel Speech Enhancement and Separation</h1>
-    </header>
 
-    <section>
-    <h2>Demo Videos</h2>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DeepASA: An Object-Oriented One-for-All Network <br> for Auditory Scene Analysis</h1>
+            <div class="is-size-4 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a>Anonymous Author(s)</a>
+                  </div>
+
+                  <div class="is-size-4 publication-authors">
+                    <span class="author-block">Affiliation<br>NeurIPS 2025</span>
+                    <span class="eql-cntrb"></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://donghoney0416.github.io/DeepASA/" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+  
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://donghoney0416.github.io/DeepASA/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                  <!-- BibTeX link -->
+                  <span class="link-block">
+                    <a href="https://donghoney0416.github.io/DeepASA/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-book"></i>
+                    </span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://donghoney0416.github.io/DeepASA/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+    <h2 class="subtitle has-text-centered">
+        Real-World Demo Video
+    </h2>
     <div>
-        <!-- Demo Video 1 -->
-        <h3>Demo Video 1: Real-world speech separation</h3>
         <video controls width="640">
-            <source src="Speech_separation_DeFTAN2.mp4" type="video/mp4">
+            <source src="static/videos/demo_video_accepted.mp4" type="video/mp4">
             Your browser does not support the video tag. Please download the video <a href="path-to-demo-video-1.mp4">here</a>.
-        </video>
-
-        <!-- Demo Video 2 -->
-        <h3>Demo Video 2: Unified Auditory Scene Analysis and Separation</h3>
-        <video controls width="640">
-            <source src="auditory_scene_analysis-DeFTMamba.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please download the video <a href="path-to-demo-video-2.mp4">here</a>.
         </video>
     </div>
 </section>
 
-    <section>
-        <h2>DeFTAN Series</h2>
-        <p class="left-aligned">
-The DeFTAN (Dense Frequency-Time Attentive Network) series comprises advanced deep learning models for multichannel speech enhancement and separation, enhancing speech quality in noisy, reverberant environments by using spatial, frequency, and temporal information. Each model addresses specific challenges like real-time processing, array-agnostic enhancement, and universal source separation, applying state-of-the-art techniques for high performance. This work broadens <a href="https://www.sound.kaist.ac.kr/" target="_blank" style="color:#4a90e2;">Smart Sound System Lab.</a>’s research to applications in multichannel sound source separation.</p>
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/19/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/15/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/12/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/10/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+     <div class="item">
+        <!-- Your image here -->
+        <img src="static/examples/3/plot.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          ASA result of our DeepASA on the ASA2 dataset.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
 
-        <!-- Content Item 1 -->
-        <div class="content-item">
-            <img src="./figure/DeFTAN_figure.png" alt="DeFT-AN: ">
-            <div class="content-text">
-                <a href="https://github.com/donghoney0416/DeFT-AN" target="_blank">DeFT-AN: Dense frequency-time attentive network for multichannel speech enhancement</a>
-                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | IEEE SPL & ICASSP 2023</div>
-            </div>
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-quarter">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified" style="font-size: 1.2rem" >
+          <p>
+            We propose <b>DeepASA/b>, a <b>one-for-all model for auditory scene analysis</b> that performs multichannel-to-multichannel (M2M) source separation, dereverberation, sound event detection (SED), audio classification, and direction-of-arrival (DoA) estimation within a unified framework. DeepASA is designed for complex auditory scenes where multiple, often similar, sound sources overlap in time and move dynamically in space. To achieve robust and consistent inference across tasks, we introduce an <font color="#e0754f"><b>object-oriented processing (OOP)</b></font> strategy. This approach encapsulates diverse auditory features into object-centric representations and refines them through a <font color="#497c27"><b>chain-of-inference (CoI)</b></font> mechanism. The pipeline comprises a dynamic temporal kernel-based feature extractor, a transformer-based aggregator, and an object separator that yields per-object features. These features feed into multiple task-specific decoders. Our object-centric formulation naturally resolves the parameter association ambiguity inherent in traditional track-wise processing. However, early-stage object separation can lead to failure in downstream ASA tasks. To address this, we implement temporal coherence matching (TCM) within the chain-of-inference, enabling multi-task fusion and iterative refinement of object features using estimated audio parameters. We evaluate DeepASA on representative spatial audio benchmark datasets, including ASA, MC-FUSS, and STARSS23. Experimental results show that our model achieves state-of-the-art performance across all evaluated tasks, demonstrating its effectiveness in both source separation and auditory parameter estimation under diverse spatial auditory scenes.
+          </p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
-        <!-- Content Item 2 -->
-        <div class="content-item">
-            <img src="./figure/DeFTANRT_figure.png" alt="DeFTAN-RT">
-            <div class="content-text">
-                <a href="https://github.com/donghoney0416/DeFT-AN-RT" target="_blank">DeFT-AN RT: Real-time Multichannel Speech Enhancement using Dense Frequency-Time Attentive Network and Non-overlapping Synthesis Window</a>
-                <div class="content-details">Author: Dongheon Lee, Dayun Choi, and Jung-Woo Choi | Interspeech 2023</div>
-            </div>
+
+
+<!-- Single image with description and fixed width -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Centered Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-2">Overview</h2>
+      </div>
+      <br>
+      <figure class="image" style="margin: 0 auto; max-width: 1280px;">
+        <img src="static/images/DeepASA.png" alt="Result Image" style="width: 100%; height: auto;">
+      </figure>
+
+      <h3 class="subtitle is-5 mt-4" >
+        <p>
+          <strong>Overview of the DeepASA Framework for Auditory Scene Analysis (ASA)</strong> </br>
+        </p>
+      </h3>
+    </div>
+  </div>
+</section>
+
+<!-- Single image with description and fixed width -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Centered Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-2">Chain-of-Inference</h2>
+      </div>
+      <br>
+      <figure class="image" style="margin: 0 auto; max-width: 1280px;">
+        <img src="static/images/oop.png" alt="Result Image" style="width: 100%; height: auto;">
+      </figure>
+      <h3 class="subtitle is-5 mt-4">
+          <strong>Illustration of the (a) traditional track-wise processing, and (b) proposed <font color="#497c27">object-oriented processing (OOP) </font>.</strong>
+      </h3>
+    </div>
+  </div>
+</section>
+
+<!-- Single image with description and fixed width -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Centered Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-2">Chain-of-Inference</h2>
+      </div>
+      <br>
+      <figure class="image" style="margin: 0 auto; max-width: 1280px;">
+        <img src="static/images/CoI.png" alt="Result Image" style="width: 100%; height: auto;">
+      </figure>
+      <h3 class="subtitle is-5 mt-4">
+          <strong>Illustration of the proposed <font color="#f5a100">chain-of-inference (CoI)</font>.</strong>
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-2">Qualitative Comparisons</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/asa2_sota.PNG" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Comparison with state-of-the-art models on ASA2 dataset.
+          </h2>
         </div>
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/mc_fuss_sota.PNG" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Comparison with state-of-the-art models on MC-FUSS dataset.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/starss23_sota.PNG" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Comparison with state-of-the-art models on STARSS23 dataset.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
 
-        <!-- Content Item 3 -->
-        <div class="content-item">
-            <img src="./figure/DeFTAN2_figure.png" alt="DeFTAN-II">
-            <div class="content-text">
-                <a href="https://donghoney0416.github.io/demos-DeFTAN-II/demo-page.html" target="_blank">DeFTAN-II: Efficient multichannel speech enhancement with subgroup processing</a>
-                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | IEEE/ACM TASLP 2024</div>
-            </div>
+<!--
+  <section class="section" id="Citation">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>
+        @article{hong2025ita,
+        title={ITA-MDT: Image-Timestep-Adaptive Masked Diffusion Transformer Framework for Image-Based Virtual Try-On},
+        author={Hong, Ji Woo and Ton, Tri and Pham, Trung X and Koo, Gwanhyeong and Yoon, Sunjae and Yoo, Chang D},
+        journal={arXiv preprint arXiv:2503.20418},
+        year={2025}}
+    </code></pre>
+    </div>
+</section>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>This work was supported by Institute for Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) (No.RS-2021-II211381, Development of Causal AI through Video Understanding and Reinforcement Learning, and Its Applications to Real Environments) and partly supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) (No.RS-2022-II220184, Development and Study of AI Technologies to Inexpensively Conform to Evolving Policy on Ethics)</p>
+  </div>
+</section>
+-->
+
+  <!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
         </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
 
-        <!-- Content Item 4 -->
-        <div class="content-item">
-            <img src="./figure/DeFTANAA_figure.png" alt="DeFTAN-AA">
-            <div class="content-text">
-                <a href="https://donghoney0416.github.io/DeFTAN-AA/" target="_blank">DeFTAN-AA: Array Geometry Agnostic Multichannel Speech Enhancement</a>
-                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | Interspeech 2024</div>
-            </div>
-        </div>
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-        <!-- Content Item 5 -->
-        <div class="content-item">
-            <img src="./figure/DeFTMamba_figure.png" alt="DeFT-Mamba">
-            <div class="content-text">
-                <a href="https://donghoney0416.github.io/DeFTMamba/" target="_blank">DeFT-Mamba: Universal Multichannel Sound Separation and Polyphonic Audio Classification</a>
-                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | Submitted to ICASSP 2025</div>
-            </div>
-        </div>
-    </section>
+    <!-- End of Statcounter Code -->
 
-    <footer>
-        <p>&copy; <a href="https://www.sound.kaist.ac.kr/" target="_blank" style="color:#4a90e2;">Smart Sound System Lab.</a></p>
-    </footer>
-
-</body>
-</html>
+  </body>
+  </html>
