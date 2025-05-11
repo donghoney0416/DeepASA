@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFTAN-Series</title>
+    <style>
+        /* 전체 페이지 배경 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+        }
+
+        /* 그라데이션 애니메이션 */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 헤더 스타일 */
+        header {
+            padding: 20px;
+            background: linear-gradient(120deg, #4a90e2, #9013fe);
+            background-size: 200% 200%;
+            animation: gradient 6s ease infinite;
+            color: #fff;
+            font-size: 20px; /* 제목 글꼴 크기를 약간 줄임 */
+            font-weight: bold;
+            border-bottom: 1px solid #fff;
+            margin-bottom: 20px;
+        }
+
+        /* 본문 섹션 스타일 */
+        section {
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-aligned {
+            text-align: left;
+        }
+
+        /* 콘텐츠 카드 스타일 */
+        .content-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .content-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text a {
+            font-weight: bold;
+            font-size: 18px; /* 제목 글꼴 크기 줄임 */
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .content-text a:hover {
+            color: #9013fe;
+        }
+
+        .content-details {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            padding: 15px;
+            background: linear-gradient(120deg, #4a90e2, #9013fe);
+            background-size: 200% 200%;
+            animation: gradient 6s ease infinite;
+            color: #fff;
+            font-size: 14px;
+            border-top: 1px solid #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DeFTAN: Dense Frequency-Time Attentive Network for <br>Multichannel Speech Enhancement and Separation</h1>
+    </header>
+
+    <section>
+    <h2>Demo Videos</h2>
+    <div>
+        <!-- Demo Video 1 -->
+        <h3>Demo Video 1: Real-world speech separation</h3>
+        <video controls width="640">
+            <source src="Speech_separation_DeFTAN2.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please download the video <a href="path-to-demo-video-1.mp4">here</a>.
+        </video>
+
+        <!-- Demo Video 2 -->
+        <h3>Demo Video 2: Unified Auditory Scene Analysis and Separation</h3>
+        <video controls width="640">
+            <source src="auditory_scene_analysis-DeFTMamba.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please download the video <a href="path-to-demo-video-2.mp4">here</a>.
+        </video>
+    </div>
+</section>
+
+    <section>
+        <h2>DeFTAN Series</h2>
+        <p class="left-aligned">
+The DeFTAN (Dense Frequency-Time Attentive Network) series comprises advanced deep learning models for multichannel speech enhancement and separation, enhancing speech quality in noisy, reverberant environments by using spatial, frequency, and temporal information. Each model addresses specific challenges like real-time processing, array-agnostic enhancement, and universal source separation, applying state-of-the-art techniques for high performance. This work broadens <a href="https://www.sound.kaist.ac.kr/" target="_blank" style="color:#4a90e2;">Smart Sound System Lab.</a>’s research to applications in multichannel sound source separation.</p>
+
+        <!-- Content Item 1 -->
+        <div class="content-item">
+            <img src="./figure/DeFTAN_figure.png" alt="DeFT-AN: ">
+            <div class="content-text">
+                <a href="https://github.com/donghoney0416/DeFT-AN" target="_blank">DeFT-AN: Dense frequency-time attentive network for multichannel speech enhancement</a>
+                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | IEEE SPL & ICASSP 2023</div>
+            </div>
+        </div>
+
+        <!-- Content Item 2 -->
+        <div class="content-item">
+            <img src="./figure/DeFTANRT_figure.png" alt="DeFTAN-RT">
+            <div class="content-text">
+                <a href="https://github.com/donghoney0416/DeFT-AN-RT" target="_blank">DeFT-AN RT: Real-time Multichannel Speech Enhancement using Dense Frequency-Time Attentive Network and Non-overlapping Synthesis Window</a>
+                <div class="content-details">Author: Dongheon Lee, Dayun Choi, and Jung-Woo Choi | Interspeech 2023</div>
+            </div>
+        </div>
+
+        <!-- Content Item 3 -->
+        <div class="content-item">
+            <img src="./figure/DeFTAN2_figure.png" alt="DeFTAN-II">
+            <div class="content-text">
+                <a href="https://donghoney0416.github.io/demos-DeFTAN-II/demo-page.html" target="_blank">DeFTAN-II: Efficient multichannel speech enhancement with subgroup processing</a>
+                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | IEEE/ACM TASLP 2024</div>
+            </div>
+        </div>
+
+        <!-- Content Item 4 -->
+        <div class="content-item">
+            <img src="./figure/DeFTANAA_figure.png" alt="DeFTAN-AA">
+            <div class="content-text">
+                <a href="https://donghoney0416.github.io/DeFTAN-AA/" target="_blank">DeFTAN-AA: Array Geometry Agnostic Multichannel Speech Enhancement</a>
+                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | Interspeech 2024</div>
+            </div>
+        </div>
+
+        <!-- Content Item 5 -->
+        <div class="content-item">
+            <img src="./figure/DeFTMamba_figure.png" alt="DeFT-Mamba">
+            <div class="content-text">
+                <a href="https://donghoney0416.github.io/DeFTMamba/" target="_blank">DeFT-Mamba: Universal Multichannel Sound Separation and Polyphonic Audio Classification</a>
+                <div class="content-details">Author: Dongheon Lee, and Jung-Woo Choi | Submitted to ICASSP 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <a href="https://www.sound.kaist.ac.kr/" target="_blank" style="color:#4a90e2;">Smart Sound System Lab.</a></p>
+    </footer>
+
+</body>
+</html>
