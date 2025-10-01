@@ -1,0 +1,60 @@
+seed_everything: 2
+trainer:
+  gradient_clip_val: 5
+  gradient_clip_algorithm: norm
+  devices: [0, 1, 2, 3]
+  accelerator: gpu
+  strategy: ddp_find_unused_parameters_true
+  sync_batchnorm: false
+  precision: bf16-mixed
+  max_epochs: 100
+model:
+  arch:
+    class_path: models.arch.DeepASA.DeepASA
+    init_args:
+      audio_mode: 'ane_rev'   # sum, ane-rev
+      class_mode: 'cls-sed'   # cls-sed, cls, sed
+      onoff_mode: 'onoff'  # True, False
+      n_srcs: 5
+      n_mics: 4
+      n_cls: 13
+      n_layers: 6
+      att_dim: 64
+      hidden_dim: 256
+      n_head: 4
+      emb_dim: 64
+      emb_ks: 4
+      emb_hs: 1
+      dropout: 0.1
+      eps: 1.0e-5
+      use_lora: false
+      freezed_modelues: &freezed_modelues []
+  channels: [0, 1, 2, 3]
+  ref_channel: 0
+  stft:
+    class_path: models.io.stft.GaborSTFT
+    init_args:
+      n_fft: 640
+      n_hop: 320
+      win_len: 640
+      num_frames: 201
+  loss:
+    class_path: models.io.loss.Loss
+    init_args:
+      loss_func: models.io.loss.neg_sa_sdr
+      pit: True
+  norm:
+    class_path: models.io.norm.Norm
+    init_args:
+      mode: frequency
+  loss_weight:
+    cls_loss: 1.0
+    sed_loss: 1.0
+    doa_loss: 1.0
+    cos_loss: 1.0
+    onoff_loss: 1.0
+  optimizer: [Adam, { lr: 5e-5, weight_decay: 1.0e-5}]
+  lr_scheduler: [ReduceLROnPlateau, { factor: 0.5, patience: 3, min_lr: 1.0e-6 }]
+  exp_name: exp
+  metrics: [SDR, SI_SDR]
+  val_metric: SC

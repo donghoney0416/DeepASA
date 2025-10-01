@@ -1,0 +1,8 @@
+data:
+  class_path: data_loaders.MC_FUSS_plus.MCFUSSplusDataModule
+  init_args:
+    sp_wsj0_dir: ./datasets/MC_FUSS_plus
+    sample_rate: 16000
+    num_speakers: 4
+    audio_time_len: [4, 4, null]
+    batch_size: [4, 4]

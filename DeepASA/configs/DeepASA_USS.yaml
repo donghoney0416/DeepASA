@@ -1,0 +1,48 @@
+seed_everything: 2
+trainer:
+  gradient_clip_val: 5
+  gradient_clip_algorithm: norm
+  devices: null
+  accelerator: gpu
+  strategy: ddp_find_unused_parameters_false
+  sync_batchnorm: false
+  precision: 32
+model:
+  arch:
+    class_path: models.arch.DeepASA_USS.DeepASA_USS
+    init_args:
+      n_srcs: 4
+      n_mics: 4
+      n_cls: 14
+      n_layers: 6
+      att_dim: 64
+      hidden_dim: 256
+      n_head: 4
+      emb_dim: 64
+      emb_ks: 4
+      emb_hs: 1
+      dropout: 0.1
+      eps: 1.0e-5
+  channels: [0, 1, 2, 3]
+  ref_channel: 0
+  stft:
+    class_path: models.io.stft.GaborSTFT
+    init_args:
+      n_fft: 640
+      n_hop: 320
+      win_len: 640
+      num_frames: 201
+  loss:
+    class_path: models.io.loss.Loss
+    init_args:
+      loss_func: models.io.loss.neg_sa_sdr
+      pit: True
+  norm:
+    class_path: models.io.norm.Norm
+    init_args:
+      mode: frequency
+  optimizer: [Adam, { lr: 0.0004 }]
+  lr_scheduler: [ReduceLROnPlateau, { factor: 0.5, patience: 3, min_lr: 1.0e-4 }]
+  exp_name: exp
+  metrics: [SDR, SI_SDR]
+  val_metric: loss

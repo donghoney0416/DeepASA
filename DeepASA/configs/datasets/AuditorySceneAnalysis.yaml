@@ -1,0 +1,9 @@
+data:
+  class_path: data_loaders.AuditorySceneAnalysis.ASADataModule
+  init_args:
+    asa_dir: ./datasets/ASA
+    sample_rate: 16000
+    num_speakers: 5
+    audio_time_len: [4.0, 4.0, 4.0]
+    batch_size: [4, 4]
+    n_classes: 13

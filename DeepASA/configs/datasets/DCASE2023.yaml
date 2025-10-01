@@ -1,0 +1,12 @@
+data:
+  class_path: data_loaders.DCASE2023.DCASE2023DataModule
+  init_args:
+    sp_wsj0_dir: /project/DeepASA/datasets/DCASE2023
+    version: min
+    target: reverb
+    sample_rate: 16000
+    num_speakers: 5
+    audio_time_len: [4, 4, 4]
+    batch_size: [2, 2]
+    label_len: 40
+    n_classes: 13
