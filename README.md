@@ -31,7 +31,7 @@ We constructed a new dataset, Auditory Scene Analysis V2 (ASA2) dataset for mult
 [ASA2 dataset link](https://huggingface.co/datasets/donghoney22/ASA2_dataset)
 
 ### Training
-Training DeepASA from scratch
+You can train the DeepASA using the below command
 ```
 python SharedTrainer.py fit --config=configs/DeepASA.yaml --configs/dataset/AuditorySceneAnalysis.yaml --data.batch_size=[2,2] --trainer.devices=[0,1,2,3] --trainer.max_epochs=100
 ```
