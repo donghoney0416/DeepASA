@@ -25,7 +25,7 @@ pip install -r requirements_.txt
 
 ## 2. Details
 ### Dataset
-We constructed a new dataset, Auditory Scene Analysis V2 (ASA2) dataset for multichannel USS and polyphonic audio classification tasks. The proposed dataset is designed to reflect various conditions, including moving sources with temporal onsets and offsets. For foreground sound sources, signals from 13 audio classes were selected from open-source databases (Pixabay¹, FSD50K, Librispeech, MUSDB18, Vocalsound). Specific information and how to download the dataset can be found at the hugging face link below.
+We constructed a new dataset, Auditory Scene Analysis V2 (ASA2) dataset for multichannel USS and polyphonic audio classification tasks. The proposed dataset is designed to reflect various conditions, including moving sources with temporal onsets and offsets. For foreground sound sources, signals from 13 audio classes were selected from open-source databases (Pixabay, FSD50K, Librispeech, MUSDB18, Vocalsound). Specific information and how to download the dataset can be found at the hugging face link below.
 
 [ASA2 dataset link](https://huggingface.co/datasets/donghoney22/ASA2_dataset)
 
