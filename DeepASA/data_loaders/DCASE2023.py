@@ -235,7 +235,7 @@ class DCASE2023DataModule(LightningDataModule):
 
         self.train = SpatializedWSJMixDataset(
             sp_wsj0_dir=self.sp_wsj0_dir,
-            dataset='test',
+            dataset='train',
             version=self.version,
             target=self.target,
             audio_time_len=audio_time_len,
@@ -245,7 +245,7 @@ class DCASE2023DataModule(LightningDataModule):
         )
         self.val = SpatializedWSJMixDataset(
             sp_wsj0_dir=self.sp_wsj0_dir,
-            dataset='train',
+            dataset='test',
             version=self.version,
             target=self.target,
             audio_time_len=self.audio_time_len[1],
