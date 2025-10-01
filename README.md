@@ -22,6 +22,7 @@ cd DeepASA
 ```
 pip install -r requirements_.txt
 ```
+We use FlashAttention and Mamba, so CUDA version must be > 11.6. If your CUDA version is less than 11.6, we recommand updating your NVIDIA driver first.
 
 ## 2. Details
 ### Dataset
