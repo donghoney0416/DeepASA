@@ -66,8 +66,6 @@ class DeepASA(nn.Module):
         self.SED_decoder = ClassNet()
         self.CoI = nn.ModuleList([])
         self.CoI.append(ChainOfInference(emb_dim, n_cls, n_srcs, n_head, dropout, ks, padding))
-        # freezed_modules = ['up_conv', 'blocks', 'object_conv', 'SED_decoder']
-        # self._freeze_module(freezed_modules)
 
     def _freeze_module(self, modules):
         """
