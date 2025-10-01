@@ -153,7 +153,6 @@ class AuditorySceneAnalysisDataset(Dataset):
                 out_dict[frame_cnt] = []
                 for tmp_val in in_dict[frame_cnt]:
                     ele_rad = (tmp_val[3]-90)*np.pi/180.
-                    # ele_rad = tmp_val[3]*np.pi/180.
                     azi_rad = tmp_val[2]*np.pi/180
                     tmp_label = np.cos(ele_rad)
                     x = np.cos(azi_rad) * tmp_label
