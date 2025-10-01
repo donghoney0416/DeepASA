@@ -5,42 +5,41 @@
 [![PWC](https://img.shields.io/badge/ASA2-dataset-yellow)](https://huggingface.co/datasets/donghoney22/ASA2_dataset)
 [![PWC](https://img.shields.io/badge/HuggingFace-demo-blue)](https://huggingface.co/spaces/donghoney22/DeepASA)
 
-Official implementation of Neural Information Processing Systems (NeurIPS) 2025 paper **"[DeepASA: An object-oriented multi-purpose network for auditory scene analysis](https://arxiv.org/pdf/2509.17247) (accepted)"**.
+Official implementation of **"[DeepASA: An object-oriented multi-purpose network for auditory scene analysis](https://arxiv.org/pdf/2509.17247) (NeurIPS 2025)"**.
 
 *We propose DeepASA, a multi-purpose model for auditory scene analysis that performs multi-input multi-output (MIMO) source separation, dereverberation, sound event detection (SED), audio classification, and direction-of-arrival estimation (DoAE) within a unified framework. DeepASA is designed for complex auditory scenes where multiple, often similar, sound sources overlap in time and move dynamically in space. To achieve robust and consistent inference across tasks, we introduce an object-oriented processing (OOP) strategy. This approach encapsulates diverse auditory features into object-centric representations and refines them through a chain-of-inference (CoI) mechanism. The pipeline comprises a dynamic temporal kernel-based feature extractor, a transformer-based aggregator, and an object separator that yields per-object features. These features feed into multiple task-specific decoders. Our object-centric representations naturally resolve the parameter association ambiguity inherent in traditional track-wise processing. However, early-stage object separation can lead to failure in downstream ASA tasks. To address this, we implement temporal coherence matching (TCM) within the chain-of-inference, enabling multi-task fusion and iterative refinement of object features using estimated auditory parameters. We evaluate DeepASA on representative spatial audio benchmark datasets, including ASA2, MC-FUSS, and STARSS23. Experimental results show that our model achieves state-of-the-art performance across all evaluated tasks, demonstrating its effectiveness in both source separation and auditory parameter estimation under diverse spatial auditory scenes.*
 
-![DeFTAN-II figure](fig/Fig_overall_architecture.png)
+![DeepASA figure](figure/DeepASA.png)
 
 ## 1. Setup
 1. Clone repository
 ```
-git clone https://github.com/donghoney0416/DeFTAN-II.git
-cd DeFTAN-II
+git clone https://github.com/donghoney0416/DeepASA.git
+cd DeepASA
 ```
 
 2. Install requirements
 ```
-pip install -r requirements.txt
+pip install -r requirements_.txt
 ```
 
 ## 2. Details
 ### Dataset
-The dataset was simulated using pyroomacoustics. See `generate_rir/gen_rir.py` for an example of the simulation code, and `generate_rir/pyroom_rir.cfg` for the configuration file.
+We constructed a new dataset, Auditory Scene Analysis V2 (ASA2) dataset for multichannel USS and polyphonic audio classification tasks. The proposed dataset is designed to reflect various conditions, including moving sources with temporal onsets and offsets. For foreground sound sources, signals from 13 audio classes were selected from open-source databases (Pixabay¹, FSD50K, Librispeech, MUSDB18, Vocalsound). Specific information and how to download the dataset can be found at the hugging face link below.
 
-### Model
-We released the code so that the model could be trained from scratch, and we uploaded a pre-trained model, trained on the spatialized DNS Challenge dataset, to Hugging Face. 
-See `DeFTAN2.py` to adjust the parameters or change modules for custom training.
+[ASA2 dataset link](https://huggingface.co/datasets/donghoney22/ASA2_dataset)
 
-### Loss
-The model was trained using PCM loss and SI-SDR loss; PCM loss was uploaded as the primary loss. See `pcm_loss.py` for details, and feel free to modify it as needed.
+### Training
+Training DeepASA from scratch
+```
+python SharedTrainer.py fit --config=configs/DeepASA.yaml --configs/dataset/auditory_scene_analysis.yaml --data.batch_size=[2,2] --trainer.devices=[0,1,2,3] --trainer.max_epochs=100
+```
 
-### Using pre-traind model [![PWC](https://img.shields.io/badge/HuggingFace-pre_trained_model-yellow)](https://huggingface.co/donghoney0416/DeFTAN-II)
-We have uploaded the pre-trained model and instructions for use on Hugging Face. Thank you for exploring and using DeFTAN-II.
-
-## 3. Results and Demos [![PWC](https://img.shields.io/badge/Demo-webpage-blue)](https://donghoney0416.github.io/demos-DeFTAN-II/demo-page.html)
-We have uploaded more audio clips and spectrogram examples to our demo page. Results from five datasets are provided: the spatialized WSJCAM0 dataset, the spatialized DNS Challenge dataset, the spatialized WSJ0-2mix dataset, the CHiME-3 real dataset, and the EasyCom dataset. This includes sound source separation, real-world speech enhancement, and more. Spectrograms and audio clips can be downloaded directly from the `fig` and `audio` directories, respectively.
-
-![result](fig/results.PNG)
+### Inference
+You can evaluate the model you trained by appropriately modifying the code below
+```
+python SharedTrainer.py test --config=configs/logs/DeepASA/version_0/config.yaml --checkpoints=configs/logs/DeepASA/version_0/checkpoints/last.ckpt --data.batch_size=[2,2] --trainer.devices=[0,1,2,3]
+```
 
 ## Citations
 ```
