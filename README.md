@@ -35,7 +35,7 @@ You can train the DeepASA using the below command
 ```
 python SharedTrainer.py fit --config=configs/DeepASA.yaml --configs/dataset/AuditorySceneAnalysis.yaml --data.batch_size=[2,2] --trainer.devices=[0,1,2,3] --trainer.max_epochs=100
 ```
-[Pretrained ATST ckpt](https://drive.google.com/file/d/1X7sKLZo_RnoLHIK8vDlCpKOLXc7bjaRD/view?usp=sharing)
+[Pretrained ATST](https://drive.google.com/file/d/1X7sKLZo_RnoLHIK8vDlCpKOLXc7bjaRD/view?usp=sharing)
 
 ### Inference
 You can evaluate the model you trained by appropriately modifying the code below
