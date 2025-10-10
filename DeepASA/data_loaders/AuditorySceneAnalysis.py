@@ -222,14 +222,14 @@ class ASADataModule(LightningDataModule):
 
         self.train = AuditorySceneAnalysisDataset(
             asa_dir=self.asa_dir,
-            dataset='dev',
+            dataset='train',
             audio_time_len=self.audio_time_len[0],
             sample_rate=self.sample_rate,
             n_classes=self.n_classes
         )
         self.val = AuditorySceneAnalysisDataset(
             asa_dir=self.asa_dir,
-            dataset='test',
+            dataset='dev',
             audio_time_len=self.audio_time_len[1],
             sample_rate=self.sample_rate,
             n_classes=self.n_classes
