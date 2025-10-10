@@ -124,7 +124,7 @@ model_checkpoint:
   enable_version_counter: true
 ckpt_path: null
 data:
-  class_path: data_loaders.DCASE2023.DCASE2023DataModule
+  class_path: data_loaders.AuditorySceneAnalysis.ASADataModule
   init_args:
     audio_time_len:
     - 4.0
@@ -148,7 +148,7 @@ data:
     - null
     - 2
     - 3
-    sp_wsj0_dir: /project/DeepASA/datasets/DCASE2023
+    sp_wsj0_dir: /project/DeepASA/datasets/ASA
     target: reverb
     test_set: test
     version: min
