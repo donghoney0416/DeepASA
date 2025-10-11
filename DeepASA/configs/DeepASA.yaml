@@ -10,7 +10,7 @@ trainer:
   max_epochs: 100
 model:
   arch:
-    class_path: models.arch.DeepASA.DeepASA
+    class_path: model.arch.DeepASA.DeepASA
     init_args:
       audio_mode: 'ane_rev'   # sum, ane-rev
       class_mode: 'cls-sed'   # cls-sed, cls, sed
@@ -58,3 +58,4 @@ model:
   exp_name: exp
   metrics: [SDR, SI_SDR]
   val_metric: SC
+
