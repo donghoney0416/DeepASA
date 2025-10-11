@@ -377,7 +377,7 @@ class ATST(torch.nn.Module):
     def load_atst(self, path=None):
         if path is None:
             # print(os.path.abspath('atst_as_strong.ckpt'))
-            pre_path = "/project/DeepASA/model/arch/atst_as_strong.ckpt"
+            pre_path = "/project/DeepASA/models/arch/atst_as_strong.ckpt"
             assert os.path.exists(pre_path), "Please make sure you have a default path to load ATST. Please change this path to the atst_as2M.ckpt that you downloaded."
             path = pre_path    # Change path to the atst_as2M.ckpt the downloaded checkpoint from the home page.
         state_dict = torch.load(path, map_location="cpu")["state_dict"]
@@ -407,3 +407,4 @@ class ATST(torch.nn.Module):
         for n, param in self.atst.named_parameters():
 
             param.requires_grad = False
+
