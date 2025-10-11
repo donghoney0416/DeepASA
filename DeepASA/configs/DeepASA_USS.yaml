@@ -9,7 +9,7 @@ trainer:
   precision: 32
 model:
   arch:
-    class_path: model.arch.DeepASA_USS.DeepASA_USS
+    class_path: models.arch.DeepASA_USS.DeepASA_USS
     init_args:
       n_srcs: 4
       n_mics: 4
@@ -46,4 +46,5 @@ model:
   exp_name: exp
   metrics: [SDR, SI_SDR]
   val_metric: loss
+
 
