@@ -1,3 +1,9 @@
+# Release Notes
+
+- v1.0: Upgraded the SED decoder to the **DPC (Dense Prediction Cell)** architecture.
+- v1.1: Enhanced the training objective and PIT (Permutation Invariant Training) logic.
+  - Transitioned from reference-channel-based PIT to **PIT using Negative SA-SDR Loss across all channels**.
+
 # DeepASA: An object-oriented multi-purpose network for auditory scene analysis
 
 
